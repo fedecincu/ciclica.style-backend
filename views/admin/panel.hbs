@@ -1,0 +1,50 @@
+<h2 class="mb-4">Panel de Mensajes</h2>
+
+{{#if error}}
+  <p class="text-danger"><strong>{{message}}</strong></p>
+{{/if}}
+
+<table class="table table-dark table-striped align-middle text-center">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Estado</th>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Mensaje</th>
+      <th>Fecha</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each contactos}}
+    <tr>
+      <td>{{id}}</td>
+      <td>
+        {{#if leido}}
+          <span class="badge bg-success">Leído</span>
+        {{else}}
+          <span class="badge bg-danger">Nuevo</span>
+        {{/if}}
+      </td>
+      <td>{{nombre}}</td>
+      <td>{{email}}</td>
+
+      <td style="max-width: 300px; white-space: pre-wrap; word-wrap: break-word;">{{{mensaje}}}</td>
+      <td>{{creado_en}}</td>
+      <td>
+        {{#if leido}}
+          <a href="/admin/panel/{{id}}/noleido" class="btn btn-warning btn-sm">Marcar no leído</a>
+        {{else}}
+          <a href="/admin/panel/{{id}}/leido" class="btn btn-success btn-sm">Marcar leído</a>
+        {{/if}}
+          <a href="/admin/administrador/panel/eliminar/{{id}}" class="btn btn-danger btn-sm"
+            onclick="return confirm('¿Seguro que querés eliminar este contacto?');">
+            Eliminar
+          </a>
+          </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+

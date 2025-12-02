@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600&display=swap');
+
+body {
+  padding: 50px;
+  font-family:"Exo 2", sans-serif;;
+  text-align: center;
+  font-optical-sizing: auto;
+  background-color: rgb(54, 49, 89);
+  color: rgb(253, 232, 201);
+}
+
+a {
+  color: #00B7FF;
+}
+
+.header {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  background-color: rgb(54, 49, 89);
+  color: rgb(253, 232, 201);
+  padding: 10px 20px;
+  font-family:"Exo 2", sans-serif;;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px; 
+}
+
+.logo {
+  width: 65px;  
+  height: auto;
+  border-radius: 8px;
+}
+
+.titulo {
+  font-size: 40px; 
+  font-weight: 300;
+  margin: 0;
+  position: relative;
+  top: 2px; 
+  font-family:"Exo 2", sans-serif;;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.menu input {
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+}
+
+.menu button {
+  padding: 5px 10px;
+  background-color: rgb(253, 232, 201);
+  color: rgb(54, 49, 89);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
